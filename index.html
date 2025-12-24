@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arie Mulyana Maas, SS - Curriculum Vitae</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #6a11cb;
+            --secondary-purple: #8a2be2;
+            --light-purple: #9d4edd;
+            --dark-purple: #4a0d8a;
+            --accent-color: #ff6b8b;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f7fe;
+            --white: #ffffff;
+            --gradient: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple), var(--light-purple));
+            --gradient-light: linear-gradient(45deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            background-image: var(--gradient-light);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Section */
+        .header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 5px 20px rgba(106, 17, 203, 0.3);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-light);
+            opacity: 0.15;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.1rem;
+        }
+        
+        /* Main Content */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--primary-purple);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(106, 17, 203, 0.15);
+        }
+        
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(106, 17, 203, 0.1);
+            position: relative;
+        }
+        
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background: var(--gradient);
+        }
+        
+        /* Education & Experience Items */
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--light-purple);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary-purple);
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+        
+        .timeline-subtitle {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .timeline-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            color: var(--secondary-purple);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--light-purple);
+            font-weight: bold;
+        }
+        
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .certificate-item {
+            background: rgba(157, 78, 221, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 3px solid var(--light-purple);
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-item:hover {
+            background: rgba(157, 78, 221, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .certificate-title {
+            font-weight: 600;
+            color: var(--dark-purple);
+            margin-bottom: 5px;
+        }
+        
+        .certificate-issuer {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        
+        .certificate-date {
+            font-size: 0.85rem;
+            color: var(--secondary-purple);
+            font-weight: 500;
+        }
+        
+        /* Showcase Section */
+        .showcase-section {
+            grid-column: span 2;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .showcase-box {
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.05), rgba(138, 43, 226, 0.1));
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px dashed var(--light-purple);
+        }
+        
+        .showcase-title {
+            color: var(--primary-purple);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .showcase-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .showcase-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        .showcase-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+        }
+        
+        /* Signature Section */
+        .signature-section {
+            grid-column: span 2;
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(106, 17, 203, 0.1);
+        }
+        
+        .signature-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-purple);
+            margin-bottom: 10px;
+        }
+        
+        .signature-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        .signature-img {
+            max-width: 200px;
+            margin: 0 auto 20px;
+            opacity: 0.9;
+        }
+
+        .cert-link {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .cert-link:hover {
+            color: #fd0101;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(106, 17, 203, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase-section, .signature-section {
+                grid-column: span 1;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 0;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .showcase-link {
+                border: 1px solid var(--primary-purple);
+                color: var(--primary-purple);
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Arie Mulyana Maas, SS</h1>
+                <p class="title">Curriculum Vitae</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kp. Bojong Rangkas RT004/RW004, Ciampea, Bogor, Jawa Barat 16620</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ariemmaas@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>085280045293 (WA/Telegram)</span>
+                    </div>
+                </div>
+                
+                <div class="contact-info" style="margin-top: 10px;">
+                    <div class="contact-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>Pekanbaru, 1972</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <span>Male | Married | Indonesian</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>NPWP: Available upon request</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="content">
+            <!-- Career Objective -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-bullseye"></i> Career Objective</h2>
+                <p>To put my abilities practically while gaining a permanent income from the institution/company/office that offers the opportunity to use and develop my skills to the greatest extent.</p>
+            </section>
+            
+            <!-- Formal Education -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-graduation-cap"></i> Formal Education</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1997</div>
+                    <h3 class="timeline-title">Bachelor in English Literature</h3>
+                    <div class="timeline-subtitle">Universitas Padjadjaran, Bandung</div>
+                    <div class="timeline-details">GPA: 2.97</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1994</div>
+                    <h3 class="timeline-title">Diploma in English Linguistics</h3>
+                    <div class="timeline-subtitle">STBA Prayoga, Padang</div>
+                    <div class="timeline-details">GPA: 3.42</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1991</div>
+                    <h3 class="timeline-title">SMA Cendana Rumbai, Pekanbaru</h3>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1988</div>
+                    <h3 class="timeline-title">SMP Cendana Rumbai, Pekanbaru</h3>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1985</div>
+                    <h3 class="timeline-title">SD Cendana Rumbai, Pekanbaru</h3>
+                </div>
+            </section>
+            
+            <!-- Professional Experience -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">03/2022 – Present</div>
+                    <h3 class="timeline-title">Online Coding Instructor</h3>
+                    <div class="timeline-subtitle">BrightChamps - Online (Full-Time)</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">03/2021 – 03/2022</div>
+                    <h3 class="timeline-title">Online Coding Instructor</h3>
+                    <div class="timeline-subtitle">SaturdayKids Singapore - Online (Part-Time)</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">03/2015 – 07/2024</div>
+                    <h3 class="timeline-title">Online English Teacher</h3>
+                    <div class="timeline-subtitle">LIA Jalan Baru Bogor (Part-Time)</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2012 – 07/2014</div>
+                    <h3 class="timeline-title">IT & Maintenance</h3>
+                    <div class="timeline-subtitle">Nurul Iman Foundation</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">06/2011 – 06/2012</div>
+                    <h3 class="timeline-title">Math Teacher</h3>
+                    <div class="timeline-subtitle">ABC Kids Clubuur</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2010 – 05/2011</div>
+                    <h3 class="timeline-title">English Teacher</h3>
+                    <div class="timeline-subtitle">NEC</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">07/2009 – 07/2010</div>
+                    <h3 class="timeline-title">Freelance English Mentor (Grade 11-12 Secondary)</h3>
+                    <div class="timeline-subtitle">Bimbel BTA 8 Pondok Pinang</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">02/2008 – 11/2008</div>
+                    <h3 class="timeline-title">Full-Time English Teacher</h3>
+                    <div class="timeline-subtitle">ILP Citra Gran</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">07/2007</div>
+                    <h3 class="timeline-title">Author of Graphic Design Book</h3>
+                    <div class="timeline-subtitle">"Teknik Dasar Desain Grafis Terapan Dengan Komputer" (Published by Bina Sumber Daya MIPA)</div>
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-code"></i> Computer Skills</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Coding & Development</h4>
+                        <ul class="skill-list">
+                            <li>Web Development (HTML, CSS, JavaScript)</li>
+                            <li>Python Programming</li>
+                            <li>DBMS (MySQL, PHP)</li>
+                            <li>App Development (Thunkable)</li>
+                            <li>Game Development (Scratch, Code.org)</li>
+                            <li>3D Modeling & Electronics (Tinkercad)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Design & Multimedia</h4>
+                        <ul class="skill-list">
+                            <li>Corel Draw 12</li>
+                            <li>Adobe Photoshop CS2</li>
+                            <li>KDEnlive Video Editor (Linux)</li>
+                            <li>Canva</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Data Visualization</h4>
+                        <ul class="skill-list">
+                            <li>NumPy, Pandas</li>
+                            <li>Matplotlib, Seaborn</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Emerging Technologies</h4>
+                        <ul class="skill-list">
+                            <li>AI/ML Basics (with Scratch)</li>
+                            <li>AR/VR (Cospaces)</li>
+                            <li>Microbit Programming</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4 style="color: var(--secondary-purple); margin-bottom: 10px;">Languages</h4>
+                    <p><strong>Indonesian:</strong> Native Proficiency</p>
+                    <p><strong>English:</strong> Excellent (EPT Score: 180.3 - Higher Intermediate, IELTS Equivalent: 6.5)</p>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <h4 style="color: var(--secondary-purple); margin-bottom: 10px;">Personal Interests</h4>
+                    <p>Coding, Video/Photo Editing, Digital Imaging, Graphic Design</p>
+                </div>
+            </section>
+            
+            <!-- Certificates Section -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-certificate"></i> Certificates & Trainings</h2>
+                
+                <div class="certificates-grid">
+                    <div class="certificate-item">
+                        <div class="certificate-title">HTML CSS Assessment 5</div>
+                        <a href="certificates/HTML%20CSS%20Training%20Certificate.pdf" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Edublocks Assessment 5</div>
+                        <a href="certificates/Edublocks%20Training%20Certificate.pdf" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Code.org Assessment 7</div>
+                        <a href="certificates/CodeOrg%20Training%20Certificate.png" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Data Visualization</div>
+                        <a href="certificates/Data%20Visualization%20Training%20Certificate.pdf" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Microbit</div>
+                        <a href="certificates/Microbit%20Training Certificate.png" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Tinkercad Electronics/3D Modeling</div>
+                        <a href="certificates/Tinkercad%20Electronics%20&%203D%20Modeling%20Training%20Certificate.pdf" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">AI/ML Assessment 5</div>
+                        <a href="certificates/AIML%20Training%20Certificate.png" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">AR/VR - Cospaces</div>
+                        <a href="certificates/ARVR%20Cospaces%20Training%20Certificate.pdf" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Canva</div>
+                        <a href="certificates/Canva%20Training%20Certificate.pdf" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Thunkable Assessment 7</div>
+                        <a href="certificates/Thunkable%20Training%20Certificate.png" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Scratch Assessment 7</div>
+                        <a href="certificates/Scratch%20Training%20Certificate.png" target="_blank" class="cert-link">
+                            BrightChamps Academy
+                        </a>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-title">Qwerty Award Certificate</div>
+                        <div class="certificate-issuer">
+                            <a href="certificates/Qwerty%20Award.pdf" target="_blank" class="cert-link">
+                                BrightChamps Academy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4 style="color: var(--secondary-purple); margin-bottom: 10px;">Additional Trainings</h4>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 – Present</div>
+                        <div class="timeline-details">Autodidact learning Coding (Block-based & Text-based)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2005 – 2006</div>
+                        <div class="timeline-details">Autodidact learning desktop publishing & graphic design (Corel Draw 12, Adobe Photoshop CS2)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">02/2004 – 03/2004</div>
+                        <div class="timeline-details">Fundamental of Graphic Design, 171 'Get Loaded' ITB Bandung (3DSMax 3.1 & Autocad 2000)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">04/1999 – 10/1999</div>
+                        <div class="timeline-details">Hotel Training, IKPI Computer (GPA: 3.53)</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- English Proficiency -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-language"></i> English Proficiency</h2>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: var(--secondary-purple); margin-bottom: 10px;">EPT (English Proficiency Test)</h4>
+                    <p><strong>Test Date:</strong> October 23, 2017</p>
+                    <p><strong>Overall Score:</strong> 180.3</p>
+                    <p><strong>Proficiency Level:</strong> Higher Intermediate</p>
+                    <p><strong>Component Scores:</strong></p>
+                    <ul style="padding-left: 20px; margin-top: 5px;">
+                        <li>Listening: 61.1</li>
+                        <li>Structure: 63.8</li>
+                        <li>Reading: 56.4</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--secondary-purple); margin-bottom: 10px;">Academic English Test (AcE Test)</h4>
+                    <p><strong>Test Date:</strong> February 15, 2019</p>
+                    <p><strong>Overall Band Score:</strong> 6.5 (IELTS Equivalent)</p>
+                    <p><strong>Component Scores:</strong></p>
+                    <ul style="padding-left: 20px; margin-top: 5px;">
+                        <li>Listening: 6.0</li>
+                        <li>Reading: 6.5</li>
+                        <li>Writing: 6.5</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Showcase Section -->
+            <section class="showcase-section">
+                <div class="showcase-box">
+                    <h2 class="showcase-title">Project Showcase & Profiles</h2>
+                    <p style="margin-bottom: 25px; color: var(--text-light); max-width: 700px; margin-left: auto; margin-right: auto;">
+                        Explore my creativity projects that demonstrate my skills in block-based and web development (text-based) coding.
+                    </p>
+                    
+                    <div class="showcase-links">
+                        <a href="blockbased_showcase.html" class="showcase-link" target="_blank">
+                            <i class="fa-solid fa-film"></i> Block-based Projects
+                        </a>
+                        <a href="textbased_showcase.html" class="showcase-link" target="_blank">
+                            <i class="fas fa-laptop-code"></i> Web Development Projects
+                        </a>
+                        <a href="https://dronacharya.brightchamps.com/my-profile?teacherId=53616c7465645f5fe20bca7e8af4e2b6e5637519b9bfac1c156eee49156b3ac3" class="showcase-link">
+                            <i class="fa-solid fa-shield"></i> BrightChamps Profile
+                        </a>
+                        <a href="https://www.linkedin.com/in/arie-m-maas-9913a4ba" class="showcase-link" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Signature Section -->
+            <section class="signature-section">
+                <div class="signature-name">Arie Mulyana Maas, SS</div>
+                <div class="signature-title">English Literature Graduate | Coding Instructor | Digital Designer</div>
+                
+                <div style="margin: 30px 0; text-align: center;">
+                    <p style="color: var(--text-light); font-style: italic;">
+                        "Combining linguistic expertise with technical skills to create innovative educational experiences."
+                    </p>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
+                    <div style="text-align: center;">
+                        <img src="certificates/Tanda%20tangan.jpg" alt="Signature" style="width: 150px; height: auto; margin-bottom: 10px;">
+                        <div style="height: 1px; width: 150px; background: var(--primary-purple); margin: 0 auto 10px;"></div>
+                        <div>Signature</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="color: var(--text-light); font-style: italic; margin-top: 78px;">Bogor, December 24 2025</p>
+                        <div style="height: 1px; width: 150px; background: var(--primary-purple); margin: 0 auto 10px; margin-top: 50px;"></div>
+                        <div>Date</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2025 Arie Mulyana Maas, SS | Curriculum Vitae | Last Updated: December 2025</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">
+                <i class="fas fa-mobile-alt"></i> 085280045293 | 
+                <i class="fas fa-envelope"></i> ariemmaas@gmail.com
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Add interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effect to certificate items
+            const certificateItems = document.querySelectorAll('.certificate-item');
+            certificateItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Add click effect to showcase links
+            const showcaseLinks = document.querySelectorAll('.showcase-link');
+            showcaseLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        alert('This is a demo link. In a real CV, these would link to your actual portfolio.');
+                    }
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> Print CV';
+            printButton.style.position = 'fixed';
+            printButton.style.bottom = '20px';
+            printButton.style.right = '20px';
+            printButton.style.background = 'var(--gradient)';
+            printButton.style.color = 'white';
+            printButton.style.border = 'none';
+            printButton.style.padding = '12px 20px';
+            printButton.style.borderRadius = '50px';
+            printButton.style.cursor = 'pointer';
+            printButton.style.boxShadow = '0 4px 15px rgba(106, 17, 203, 0.3)';
+            printButton.style.zIndex = '1000';
+            printButton.style.fontFamily = "'Poppins', sans-serif";
+            printButton.style.fontWeight = '500';
+            printButton.style.transition = 'all 0.3s ease';
+            
+            printButton.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 6px 20px rgba(106, 17, 203, 0.4)';
+            });
+            
+            printButton.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 15px rgba(106, 17, 203, 0.3)';
+            });
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+</html>
